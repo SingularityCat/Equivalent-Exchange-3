@@ -35,6 +35,7 @@ import com.pahimar.ee3.lib.Reference;
 import com.pahimar.ee3.lib.Strings;
 import com.pahimar.ee3.nbt.NBTHelper;
 import com.pahimar.ee3.network.PacketHandler;
+import com.pahimar.ee3.recipe.RecipesTransmutationStone;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -160,6 +161,9 @@ public class EquivalentExchange3 {
 		// Initialize custom rendering and pre-load textures (Client only)
 		proxy.initRenderingAndTextures();
 
+		// Load the Transmutation Stone recipes
+		RecipesTransmutationStone.init();
+
 		// Add in the ability to dye Alchemical Bags
 		CraftingManager.getInstance().getRecipeList()
 				.add(new RecipesAlchemicalBagDyes());
@@ -190,7 +194,7 @@ public class EquivalentExchange3 {
 		// Initialize the DynEMC system
 		// TODO Seems like this happens earlier than it should now, investigate
 		// where this should go
-		DynEMC dynEMC = DynEMC.getInstance();
+		//DynEMC dynEMC = DynEMC.getInstance();
 	}
 
 	@EventHandler
